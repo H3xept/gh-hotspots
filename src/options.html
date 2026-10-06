@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PR Hotspots settings</title>
+    <style>
+      :root { color-scheme: light dark; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      body { max-width: 560px; margin: 40px auto; padding: 0 16px; }
+      label { display: block; font-weight: 600; margin-top: 20px; }
+      input { width: 100%; box-sizing: border-box; padding: 6px 8px; margin-top: 4px; font: inherit; }
+      .hint { color: GrayText; font-size: 12px; margin-top: 4px; }
+      button { margin-top: 24px; padding: 6px 16px; font: inherit; }
+      #status { margin-left: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>PR Hotspots</h1>
+    <form id="form">
+      <label for="token">GitHub token</label>
+      <input id="token" type="password" autocomplete="off" spellcheck="false" />
+      <div class="hint">
+        Use a fine-grained token with read-only <b>Pull requests</b> and <b>Contents</b> access to the
+        repositories you want to inspect, or a classic token with the <code>repo</code> scope for private
+        repositories (<code>public_repo</code> for public ones). The token stays in this browser's extension storage.
+      </div>
+
+      <label for="maxPullRequests">Open PRs to analyze per repository</label>
+      <input id="maxPullRequests" type="number" min="1" max="500" />
+      <div class="hint">The most recently updated PRs come first. Each new or changed PR costs one API call.</div>
+
+      <label for="staleDays">Mark a PR as stale after this many days without activity</label>
+      <input id="staleDays" type="number" min="1" max="365" />
+
+      <button type="submit">Save</button><span id="status"></span>
+    </form>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

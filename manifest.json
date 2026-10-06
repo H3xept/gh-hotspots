@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "PR Hotspots",
+  "version": "0.1.0",
+  "description": "Shows which open pull requests touch the same files, which are isolated, which are likely to conflict, and when each was last active.",
+  "homepage_url": "https://github.com/H3xept/gh-hotspots",
+  "permissions": ["storage", "unlimitedStorage"],
+  "host_permissions": ["https://api.github.com/*"],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "src/options.html",
+  "action": {
+    "default_title": "PR Hotspots settings"
+  }
+}

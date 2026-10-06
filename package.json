@@ -1,0 +1,15 @@
+{
+  "name": "pr-hotspots",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that shows which open GitHub pull requests touch the same files and will likely conflict.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H3xept/gh-hotspots.git"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "bun test"
+  }
+}

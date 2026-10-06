@@ -1,0 +1,25 @@
+/* Badges injected next to PR titles on the pull request list. The panel
+   lives in a shadow root and carries its own styles. */
+.prh-badges {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.prh-chip {
+  display: inline-block;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.prh-isolated { color: var(--fgColor-success, #1a7f37); border-color: var(--borderColor-success-muted, #4ac26b66); }
+.prh-overlaps { color: var(--fgColor-attention, #9a6700); background: var(--bgColor-attention-muted, #fff8c5); }
+.prh-collides { color: var(--fgColor-danger, #d1242f); background: var(--bgColor-danger-muted, #ffebe9); }
+.prh-base-conflict { color: var(--fgColor-onEmphasis, #fff); background: var(--bgColor-danger-emphasis, #cf222e); }
+.prh-activity { color: var(--fgColor-muted, #59636e); border-color: var(--borderColor-default, #d1d9e0); }
+.prh-stale { color: var(--fgColor-severe, #bc4c00); border-color: var(--borderColor-severe-muted, #fb8f4466); }
